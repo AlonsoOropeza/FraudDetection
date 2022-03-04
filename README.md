@@ -42,9 +42,9 @@ You also need to pip install: pandas, numpy, matplotlib and sklearn.
 3. Wait for the model to finish
 4. Review the prediction
 ## Results
-||mean squared error|coeficient of determination|
+||Mean Squared Error|Coeficient of Determination|
 |-|-|-|
-|By hand|[0.075|0.6703|
+|By hand|0.075|0.6703|
 |Framework|0.0125|0.945|
 
 ![errors-epochs](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/errors.png)
