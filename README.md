@@ -42,10 +42,10 @@ You also need to pip install: pandas, numpy, matplotlib and sklearn.
 3. Wait for the model to finish
 4. Review the prediction
 ## Results
-||final parameters|mean squared error|coeficient of determination|
-|-|-|-|-|
-|By hand|[74.54, 41.94, 31.87, 65.69]|17.77|0.77|
-|Framework|[8.74, 5.01, 3.64, 7.89]|0.53|0.64|
+||mean squared error|coeficient of determination|
+|-|-|-|
+|By hand|[0.075|0.6703|
+|Framework|0.0125|0.945|
 
 ![errors-epochs](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/errors.png)
 ![feature-importance](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/feature_importance.png)
