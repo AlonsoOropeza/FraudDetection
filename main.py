@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import logisticModule as lm
 from sklearn import preprocessing
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import r2_score, mean_squared_error
 
 # get the data
 df = pd.read_csv('chronic_kidney_disease.data')
@@ -37,6 +38,7 @@ scaler = preprocessing.StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test= scaler.transform(X_test)
 prediction = scaler.transform(prediction)
+
 def accuracy(y_true, y_pred):
     accuracy = np.sum(y_true == y_pred) / len(y_true)
     return accuracy
@@ -44,8 +46,9 @@ def accuracy(y_true, y_pred):
 # manual logistic regression
 regressor = lm.LogisticRegression(learning_rate=0.0001, n_iters=1000)
 regressor.fit(X_train, y_train)
-predictions = regressor.predict(X_test)
-print('LR classification accuracy:', accuracy(y_test, predictions))
+y_pred = regressor.predict(X_test)
+print('\nCoefficient of Determination', r2_score(y_test, y_pred)) 
+print('MSE', mean_squared_error(y_test, y_pred)) 
 if regressor.predict(prediction):
     print('You may have chronic kidney disease 💀')
 else:
@@ -53,9 +56,12 @@ else:
 
 # framework logistic regression
 clf = LogisticRegression(random_state=42).fit(X_train, y_train)
-print('Score of framework:', clf.score(X_test,y_test))
-importance = clf.coef_.flatten()
+predictions = clf.predict(X_test)
+print('\nFramework LR')
+print('Coefficient of Determination', r2_score(y_test, predictions)) 
+print('MSE', mean_squared_error(y_test, predictions)) 
 
 # plot feature importance
+importance = clf.coef_.flatten()
 plt.bar([x for x in range(len(importance))], importance)
 plt.show()
