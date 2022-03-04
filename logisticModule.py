@@ -1,3 +1,10 @@
+'''
+Title: MLfromscratch
+Author: janaSunrise
+Date: Jun 13, 2021
+Availability: https://github.com/python-engineer/MLfromscratch/blob/master/mlfromscratch/logistic_regression.py
+'''
+
 import numpy as np
 
 class LogisticRegression:
