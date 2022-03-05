@@ -6,7 +6,7 @@ We use logistic regression to predict the probability that the patient suffers f
 ## Introduction
 As we implied in the abstract, our objective is to predict whether the patient suffers from ckd in time to save his life.
 We will be using logistic regression, which is the go-to linear classification algorithm for two-class problems.
-![logistic-model](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/linear-model.png)  
+![logistic-model](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/logistic%20model.png)  
 Logistic regression uses an equation as the representation, very much like linear regression. Input values (X) are combined linearly using weights or coefficient values to predict an output value (y).  
 A key difference from linear regression is that the output value being modeled is a binary value (0 or 1) rather than a numeric value.  
 
@@ -17,9 +17,8 @@ Gradient descent update the parameters (slopes) by calculating over and over its
 ![bias-gradient-descent](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/gradient-descent.png)  
 Where theta is each one of the parameters (theta 0 is the bias), alpha is the learning rate, m is the number of parameters, h0 is a prediction, y(i) is the real value and finally, xij is the value of the samples.   
 ### Mean Squared Error
-In order to calculate our error, in each epoch we will be using the mean squared error
-![mean-squared-error](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/mean-squared-error.png)  
-Thus means the sumatory of the squares of the prediction minus the real value.
+In order to calculate our error, in each epoch we will be using a loss function called cross entropy.
+![loss-function](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/cost%20function.png)  
 ### Dataset
 Finally the stature_hand_foot.csv dataset has the following features:
 1. Age(numerical)
@@ -81,12 +80,12 @@ You also need to pip install: pandas, numpy, matplotlib and sklearn.
 3. Wait for the model to finish
 4. Review the prediction
 ## Results
-||Mean Squared Error|Coeficient of Determination|
-|-|-|-|
-|By hand|0.075|0.6703|
-|Framework|0.0125|0.945|
+||Accuracy score|
+|-|-|
+|By hand|0.9375|
+|Framework|0.9875|
 
-![errors-epochs](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/errors.png)
+![errors-epochs](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/learning.png)
 ![feature-importance](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/feature_importance.png)
 ## Discussion
 As we can see there is a relationship between handLen, footLen and height, but it is not as strong as we initially believed. Sure, we can make predictions, but the coeficient of determination is between 64% and 77%. The reason could be any of the following:
