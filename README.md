@@ -6,7 +6,9 @@ We use logistic regression to predict the probability that the patient suffers f
 ## Introduction
 As we implied in the abstract, our objective is to predict whether the patient suffers from ckd in time to save his life.
 We will be using logistic regression, which is the go-to linear classification algorithm for two-class problems.
+
 ![logistic-model](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/logistic%20model.png)  
+
 Logistic regression uses an equation as the representation, very much like linear regression. Input values (X) are combined linearly using weights or coefficient values to predict an output value (y).  
 A key difference from linear regression is that the output value being modeled is a binary value (0 or 1) rather than a numeric value.  
 
@@ -94,7 +96,7 @@ As we can see there is a relationship between handLen, footLen and height, but i
 
 Altough we can't predict lenghts of human features with high accuracy, we can make good aproximations. Based on the graphs, the error is low enough to be sure the model was trained, but when I compared it with the linear regression of sklearn the accuracy buffed up to 81%. My best guess, is that for low-size datasets, its better to use linear regression than gradient descent. Since the difference in performance is minimal, and the accuracy is higher, I think it's worth it. 
 ## Limitations
-Because we only analyze data from one source, it may be too soon to make generalized conclusions. Also the dataset contained stature, hand length, and foot length among 80 males and 75 females, which gives a total of 155 rows and that in the machine learning community is considered as a small sample. We definitily need more data (maybe records from different people around the world) to make better predicitions. 
+Because we only analyze data from one source, it may be too soon to make generalized conclusions. Also this serves only as an aproximation, by no means you should take this seriously, you should seeks advice with a medical professionals.
 ## References
 [1]"UCI Machine Learning Repository: Chronic_Kidney_Disease Data Set", Archive.ics.uci.edu, 2022. [Online]. Available: https://archive.ics.uci.edu/ml/datasets/Chronic_Kidney_Disease#. [Accessed: 04- Mar- 2022].
 [2]W. Disease? and N. Health, "What Is Chronic Kidney Disease? | NIDDK", National Institute of Diabetes and Digestive and Kidney Diseases, 2022. [Online]. Available: https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/what-is-chronic-kidney-disease. [Accessed: 05- Mar- 2022].
