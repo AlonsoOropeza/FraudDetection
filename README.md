@@ -1,19 +1,14 @@
 # Predicting a chronical kidney disease using logistic regression
 ## Abstract
-Have you ever wonder if the stature of a person determines the lenght of their feet and hands? For Lord of the Rings fans, what about hobbits, they are smaller than humans, nevertheless they have larger feet. Is there any relation between these variables or is it mere coincidence? Thankfully, using linear regression, we can make a prediction based on its dependance of other features to finally answer if its true our hypothesis or not. 
+Chronic kidney disease (CKD) is common among adults in the United States. More than 37 million American adults may have CKD. CKD means your kidneys are damaged and can’t filter blood the way they should. The disease is called “chronic” because the damage to your kidneys happens slowly over a long period of time. This damage can cause wastes to build up in your body. CKD can also cause other health problems. The sooner you know you have kidney disease, the sooner you can make changes to protect your kidneys. 
+We use logistic regression to predict the probability that the patient suffers from CKD.
 
 ## Introduction
-As we implied in the abstract, our objective is to determine if there is any relation between the stature of a human and the lenght of their feet and hands.  
-We will be using linear regression, which is a machine learning algorithm thats tries to fit data into a linear model. 
-![linear-model](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/linear-model.png)  
-But for those of you who just read that line and didn't understand what the heck I am talking about, let me rephrase it.  
-Do you remember your highschool math clases, when you saw the equation of a line?  
-The famous **y = mx + b**  
-Where y is the output, m is the slope of the line, x is the input and b is the intercept.  
-Well this is similar, but with minor modifications. Now we can have multiple features, that means multiple pairs of slopes and x's.    
-In other words: **prediction = m1x1 + m2x2 + m3x3 + ... + mnxn + bias**    
-As you saw, b is now the **bias**, which is the difference between our actual and predicted values. The model is also affected by how "noisy" the data is, the so called **variance** is the model’s sensitivity to fluctuations in the data. Analyize the image below for further explanation.  
-![bias-variance](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/bias-variance.png)  
+As we implied in the abstract, our objective is to predict whether the patient suffers from ckd in time to save his life.
+We will be using logistic regression, which is the go-to linear classification algorithm for two-class problems.
+![logistic-model](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/linear-model.png)  
+Logistic regression uses an equation as the representation, very much like linear regression. Input values (X) are combined linearly using weights or coefficient values to predict an output value (y).  
+A key difference from linear regression is that the output value being modeled is a binary value (0 or 1) rather than a numeric value.  
 
 ## Materials and Methods
 ### Gradient Descent
@@ -26,14 +21,58 @@ In order to calculate our error, in each epoch we will be using the mean squared
 ![mean-squared-error](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/mean-squared-error.png)  
 Thus means the sumatory of the squares of the prediction minus the real value.
 ### Dataset
-Finally the stature_hand_foot.csv dataset has the following variables:
-- idGen (w/in gender)  
-- gender (1=M, 2=F)
-- height (mm)  
-- handLen (mm)   
-- footLen (mm)
+Finally the stature_hand_foot.csv dataset has the following features:
+1. Age(numerical)
+  	  	age in years
+2. Blood Pressure(numerical)
+	       	bp in mm/Hg
+3. Specific Gravity(nominal)
+	  	sg - (1.005,1.010,1.015,1.020,1.025)
+4. Albumin(nominal)
+		al - (0,1,2,3,4,5)
+5. Sugar(nominal)
+		su - (0,1,2,3,4,5)
+6. Red Blood Cells(nominal)
+		rbc - (normal,abnormal)
+7. Pus Cell (nominal)
+		pc - (normal,abnormal)
+8. Pus Cell clumps(nominal)
+		pcc - (present,notpresent)
+9. Bacteria(nominal)
+		ba  - (present,notpresent)
+10. Blood Glucose Random(numerical)		
+		bgr in mgs/dl
+11. Blood Urea(numerical)	
+		bu in mgs/dl
+12. Serum Creatinine(numerical)	
+		sc in mgs/dl
+13. Sodium(numerical)
+		sod in mEq/L
+14. Potassium(numerical)	
+		pot in mEq/L
+15. Hemoglobin(numerical)
+		hemo in gms
+16. Packed  Cell Volume(numerical)
+17 .White Blood Cell Count(numerical)
+		wc in cells/cumm
+18. Red Blood Cell Count(numerical)	
+		rc in millions/cmm
+19. Hypertension(nominal)	
+		htn - (yes,no)
+20. Diabetes Mellitus(nominal)	
+		dm - (yes,no)
+21. Coronary Artery Disease(nominal)
+		cad - (yes,no)
+22. Appetite(nominal)	
+		appet - (good,poor)
+23. Pedal Edema(nominal)
+		pe - (yes,no)	
+24. Anemia(nominal)
+		ane - (yes,no)
+25. Class (nominal)		
+		class - (ckd,notckd)
   
-We make a bit of **preprocessing** before we train the model with the dataframe. We scaled down a little bit the height, handLen and footLen in order to be in centimeters, we also used hot-econding with the gender. 
+We make a bit of **preprocessing** before we train the model with the dataframe. We filled the missing values with the mean of each column and scaled down the features using the StandardScaler of sklearn.
 ### How to run it
 You need python 3.9.2 or later
 You also need to pip install: pandas, numpy, matplotlib and sklearn.
@@ -59,3 +98,4 @@ Altough we can't predict lenghts of human features with high accuracy, we can ma
 Because we only analyze data from one source, it may be too soon to make generalized conclusions. Also the dataset contained stature, hand length, and foot length among 80 males and 75 females, which gives a total of 155 rows and that in the machine learning community is considered as a small sample. We definitily need more data (maybe records from different people around the world) to make better predicitions. 
 ## References
 [1]"UCI Machine Learning Repository: Chronic_Kidney_Disease Data Set", Archive.ics.uci.edu, 2022. [Online]. Available: https://archive.ics.uci.edu/ml/datasets/Chronic_Kidney_Disease#. [Accessed: 04- Mar- 2022].
+[2]W. Disease? and N. Health, "What Is Chronic Kidney Disease? | NIDDK", National Institute of Diabetes and Digestive and Kidney Diseases, 2022. [Online]. Available: https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/what-is-chronic-kidney-disease. [Accessed: 05- Mar- 2022].
