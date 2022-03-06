@@ -18,7 +18,7 @@ In order to make our prediction we have to determine the value of each slope, we
 Gradient descent update the parameters (slopes) by calculating over and over its values until the predicted value is the same as the real value, the error is less than the learning rate or the number or iterations reach a limit. In a nutshell, gradient descent does big steps when far way, and does baby steps when close to the optimal value.
 ![bias-gradient-descent](https://raw.githubusercontent.com/AlonsoOropeza/LinearRegression/main/gradient-descent.png)  
 Where theta is each one of the parameters (theta 0 is the bias), alpha is the learning rate, m is the number of parameters, h0 is a prediction, y(i) is the real value and finally, xij is the value of the samples.   
-### Mean Squared Error
+### Cross Entropy
 In order to calculate our error, in each epoch we will be using a loss function called cross entropy.
 ![loss-function](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/cost%20function.png)  
 ### Dataset
