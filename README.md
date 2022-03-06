@@ -95,6 +95,7 @@ Logistic regression is fine for this kind of problems but maybe not enough for m
 It was a wiser decission to fill the missing values rather than drop them, because the more data we feed into the model the better.
 The difference between the by hand and framework implementation isn't that high.
 We found that changing the learning rate and the number epochs can improve the accuracy of the model.
+The sweet spot for a learning rate of 0.005 is ~700 epochs, more epochs can degrade the score.
 ## Limitations
 Because we only analyze data from one source, it may be too soon to make generalized conclusions. Also this serves only as an aproximation, by no means you should take this seriously, you should seeks advice with a medical professionals.
 ## References
