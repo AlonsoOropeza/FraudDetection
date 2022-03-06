@@ -99,5 +99,5 @@ The sweet spot for a learning rate of 0.005 is ~700 epochs, more epochs can degr
 ## Limitations
 Because we only analyze data from one source, it may be too soon to make generalized conclusions. Also this serves only as an aproximation, by no means you should take this seriously, you should seeks advice with a medical professionals.
 ## References
-[1]"UCI Machine Learning Repository: Chronic_Kidney_Disease Data Set", Archive.ics.uci.edu, 2022. [Online]. Available: https://archive.ics.uci.edu/ml/datasets/Chronic_Kidney_Disease#. [Accessed: 04- Mar- 2022].
+[1]"UCI Machine Learning Repository: Chronic_Kidney_Disease Data Set", Archive.ics.uci.edu, 2022. [Online]. Available: https://archive.ics.uci.edu/ml/datasets/Chronic_Kidney_Disease#. [Accessed: 04- Mar- 2022].  
 [2]W. Disease? and N. Health, "What Is Chronic Kidney Disease? | NIDDK", National Institute of Diabetes and Digestive and Kidney Diseases, 2022. [Online]. Available: https://www.niddk.nih.gov/health-information/kidney-disease/chronic-kidney-disease-ckd/what-is-chronic-kidney-disease. [Accessed: 05- Mar- 2022].
