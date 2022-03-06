@@ -90,11 +90,11 @@ You also need to pip install: pandas, numpy, matplotlib and sklearn.
 ![errors-epochs](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/learning.png)
 ![feature-importance](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/feature_importance.png)
 ## Discussion
-As we can see there is a relationship between handLen, footLen and height, but it is not as strong as we initially believed. Sure, we can make predictions, but the coeficient of determination is between 64% and 77%. The reason could be any of the following:
-- We have few data points in out dataset (compared with the industry), therefore the model isn't as good as we want.
-- The model is not as complex as the problem requires, maybe we could do better using trees or neural networks.
-
-Altough we can't predict lenghts of human features with high accuracy, we can make good aproximations. Based on the graphs, the error is low enough to be sure the model was trained, but when I compared it with the linear regression of sklearn the accuracy buffed up to 81%. My best guess, is that for low-size datasets, its better to use linear regression than gradient descent. Since the difference in performance is minimal, and the accuracy is higher, I think it's worth it. 
+As we can see the most significant features are the ones the ones who have more influence over the binary classification. 
+Logistic regression is fine for this kind of problems but maybe not enough for more complex data.
+It was a wiser decission to fill the missing values rather than drop them, because the more data we feed into the model the better.
+The difference between the by hand and framework implementation isn't that high.
+We found that changing the learning rate and the number epochs can improve the accuracy of the model.
 ## Limitations
 Because we only analyze data from one source, it may be too soon to make generalized conclusions. Also this serves only as an aproximation, by no means you should take this seriously, you should seeks advice with a medical professionals.
 ## References
