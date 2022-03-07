@@ -45,9 +45,9 @@ regressor.fit(X_train, y_train)
 y_pred = regressor.predict(X_test)
 print('\nAccuracy score', accuracy_score(y_test, y_pred)) 
 if regressor.predict(prediction):
-    print('You may have chronic kidney disease 💀')
+    print('You may have chronic kidney disease x_x')
 else:
-    print('You are safe from chronic kidney disease 🥳')
+    print('You are safe from chronic kidney disease ＾-＾')
 
 # framework logistic regression
 clf = LogisticRegression(random_state=42).fit(X_train, y_train)
