@@ -1,6 +1,6 @@
 '''
 Title: MLfromscratch
-Author: janaSunrise
+Author: janaSunrise, python-engineer
 Date: Jun 13, 2021
 Availability: https://github.com/python-engineer/MLfromscratch/blob/master/mlfromscratch/logistic_regression.py
 '''

@@ -1,11 +1,13 @@
+import logisticModule as lm
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split, cross_val_score
-import matplotlib.pyplot as plt
-import logisticModule as lm
 from sklearn import preprocessing
+from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score, precision_score, recall_score
+import matplotlib.pyplot as plt
+from seaborn import heatmap
+
 
 # get the data
 df = pd.read_csv('chronic_kidney_disease.data')
@@ -20,6 +22,7 @@ print(''.join([line for line in f]))
 f.close
 # age,bp,sg,al,su,rbc,pc,pcc,ba,bgr,bu,sc,sod,pot,hemo,pcv,wbcc,rbcc,htn,dm,cad,appet,pe,ane
 prediction = [56,90,1.015,2,0,0,0,0,0,129,107,6.7,131,4.8,9.1,29,6400,3.4,1,0,0,1,0,0] # should be 1
+prediction = [12,80,1.020,0,0,1,1,0,0,100,26,0.6,137,4.4,15.8,49,6600,5.4,0,0,0,1,0,0] # should be 0
 # Reshaping into 2Ds
 prediction = np.array(prediction).reshape(1,-1)
 
@@ -43,16 +46,29 @@ prediction = scaler.transform(prediction)
 regressor = lm.LogisticRegression(learning_rate=0.005, n_iters=700)
 regressor.fit(X_train, y_train)
 y_pred = regressor.predict(X_test)
-print('\nAccuracy score', accuracy_score(y_test, y_pred)) 
+
 if regressor.predict(prediction):
-    print('You may have chronic kidney disease x_x')
+    print('\nYou may have chronic kidney disease 💀')
 else:
-    print('You are safe from chronic kidney disease ＾-＾')
+    print('\nYou are safe from chronic kidney disease 😎')
+
+confusion_matrix = pd.crosstab(y_test, y_pred, rownames=['Actual'], colnames=['Predicted'])
+print(confusion_matrix)
+# heatmap(confusion_matrix, annot=True)
+# plt.show()
+
+print('\nAccuracy: Overall, how often is the classifier correct?', accuracy_score(y_test, y_pred))
+print('True Positive Rate: When it is actually yes, how often does it predict yes?', recall_score(y_test, y_pred))
+print('Precision: Correct positive predictions relative to total positive predictions', precision_score(y_test, y_pred))
 
 # framework logistic regression
 clf = LogisticRegression(random_state=42).fit(X_train, y_train)
 predictions = clf.predict(X_test)
 print('\nFramework LR')
+if clf.predict(prediction):
+    print('You may have chronic kidney disease 💀')
+else:
+    print('You are safe from chronic kidney disease 😎')
 print('Accuracy score', accuracy_score(y_test, predictions)) 
 
 # plot feature importance
