@@ -82,14 +82,14 @@ You also need to pip install: pandas, numpy, matplotlib and sklearn.
 3. Wait for the model to finish
 4. Review the prediction
 ## Results
-||Accuracy score|
-|-|-|
-|By hand|0.9375|
-|Framework|0.9875|
-
 ![feature-importance](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/feature_importance.png)
 ![errors-epochs](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/learning.png)
 ![confussion-matrix](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/confussion_matrix.png)
+|Metric|Description|Value|
+|-|-|-|
+|Accuracy|Overall, how often is the classifier correct?|0.9375|
+|True Positive Rate|When it is actually yes, how often does it predict yes?|0.9038|
+|Precision|When it predicts yes, how often is it correct?|1.0|
 ## Discussion
 As we can see the most significant features are the ones the ones who have more influence over the binary classification. 
 Logistic regression is fine for this kind of problems but maybe not enough for more complex data.
