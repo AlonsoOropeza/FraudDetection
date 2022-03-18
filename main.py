@@ -72,6 +72,8 @@ else:
 print('Accuracy score', accuracy_score(y_test, predictions)) 
 
 # plot feature importance
-# importance = clf.coef_.flatten()
-# plt.bar([x for x in range(len(importance))], importance)
-# plt.show()
+importance = clf.coef_.flatten()
+plt.bar([x for x in range(len(importance))], importance)
+plt.xlabel('Features')
+plt.ylabel('Importance')
+plt.show()
