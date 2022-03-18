@@ -87,8 +87,9 @@ You also need to pip install: pandas, numpy, matplotlib and sklearn.
 |By hand|0.9375|
 |Framework|0.9875|
 
-![errors-epochs](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/learning.png)
 ![feature-importance](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/feature_importance.png)
+![errors-epochs](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/learning.png)
+![confussion-matrix](https://raw.githubusercontent.com/AlonsoOropeza/Kidney-Logistic-Regression/main/confussion_matrix.png)
 ## Discussion
 As we can see the most significant features are the ones the ones who have more influence over the binary classification. 
 Logistic regression is fine for this kind of problems but maybe not enough for more complex data.
