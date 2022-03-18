@@ -57,7 +57,7 @@ print(confusion_matrix)
 # heatmap(confusion_matrix, annot=True)
 # plt.show()
 
-print('\nAccuracy: ', accuracy_score(y_test, y_pred))
+print('Accuracy: ', accuracy_score(y_test, y_pred))
 print('True Positive Rate: ', recall_score(y_test, y_pred))
 print('Precision: ', precision_score(y_test, y_pred))
 
@@ -72,8 +72,8 @@ else:
 print('Accuracy score', accuracy_score(y_test, predictions)) 
 
 # plot feature importance
-importance = clf.coef_.flatten()
-plt.bar([x for x in range(len(importance))], importance)
-plt.xlabel('Features')
-plt.ylabel('Importance')
-plt.show()
+# importance = clf.coef_.flatten()
+# plt.bar([x for x in range(len(importance))], importance)
+# plt.xlabel('Features')
+# plt.ylabel('Importance')
+# plt.show()
