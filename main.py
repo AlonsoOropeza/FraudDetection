@@ -57,9 +57,9 @@ print(confusion_matrix)
 # heatmap(confusion_matrix, annot=True)
 # plt.show()
 
-print('\nAccuracy: Overall, how often is the classifier correct?', accuracy_score(y_test, y_pred))
-print('True Positive Rate: When it is actually yes, how often does it predict yes?', recall_score(y_test, y_pred))
-print('Precision: Correct positive predictions relative to total positive predictions', precision_score(y_test, y_pred))
+print('\nAccuracy: ', accuracy_score(y_test, y_pred))
+print('True Positive Rate: ', recall_score(y_test, y_pred))
+print('Precision: ', precision_score(y_test, y_pred))
 
 # framework logistic regression
 clf = LogisticRegression(random_state=42).fit(X_train, y_train)
